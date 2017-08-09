@@ -13,10 +13,16 @@
 
 Route::get('/', function () {
 	if (Auth::check()) {
-    	echo "logged in";
+    	return redirect()->route('dashboard');
+	}else{
+		return redirect()->route('login');
 	}
-    return view('welcome');
+    
 });
 
-Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+
+Route::post('dashboard', 'NoteController@store')->name('storeNote');
+
+Route::get('dashboard', 'HomeController@index')->name('dashboard');

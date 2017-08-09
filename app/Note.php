@@ -6,8 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Note extends Model
 {
+    protected $fillable = ['content','user_id'];
+
     public function user()
     {
-      return $this->hasOne('App\User');
+      return $this->belongsTo('App\User');
     }
 }
