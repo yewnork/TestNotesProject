@@ -20,6 +20,12 @@
   - Developed on Homestead, a Vagrant managed virtual machine on VirtualBox  (https://laravel.com/docs/5.4/homestead)
 
 # Other Info:
+
+Generic DB info (USER/PW/DB_NAME) is in the .env file
+
 Username \\ Passwords
+
 greg@test.com \\ 123123
+
 tim@test.com \\ abcabc
+
