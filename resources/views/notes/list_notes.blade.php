@@ -34,7 +34,7 @@
     </li>
     @foreach ($notes as $note)
     <li class="collection-item">
-        <span class="title">{{ $note->user->name }}</span> - <span>{{ $note->created_at->diffForHumans() }}</span>
+        <span class="title"><b>{{ $note->user->name }}</b></span> - <span><i>{{ $note->created_at->diffForHumans() }}</i></span>
         <p>{!! nl2br(e($note->content)) !!}</p>
     </li>
     @endforeach

@@ -13,21 +13,16 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-    	$user_me = User::create(array(
+    	$user1 = User::create(array(
                 'email' => "greg@test.com",
                 'name' => "Greg",
                 'password' => Hash::make("123123"),
             ));
+        $user2 = User::create(array(
+                'email' => "tim@test.com",
+                'name' => "Tim",
+                'password' => Hash::make("abcabc"),
+            ));
 
-        // $faker = Faker\Factory::create();
-
-        // for ($i = 0; $i < 5; $i++)
-        // {
-        //     $user = User::create(array(
-        //         'email' => $faker->email,
-        //         'name' => $faker->unique()->name,
-        //         'password' => $faker->word,
-        //     ));
-        // }
     }
 }

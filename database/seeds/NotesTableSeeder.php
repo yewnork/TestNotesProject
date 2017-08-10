@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 
 use App\Note;
+use Faker\Factory as Faker;
 
 class NotesTableSeeder extends Seeder
 {
@@ -13,12 +14,12 @@ class NotesTableSeeder extends Seeder
      */
     public function run()
     {
-
-        for ($i = 0; $i < 5; $i++)
+        $faker = Faker::create();
+        for ($i = 0; $i < 9; $i++)
         {
             $user = Note::create(array(
-                'content' => "Seeder Note " . $i,
-                'user_id' => 1,
+                'content' => $faker->paragraph,
+                'user_id' => rand(1,2),
             ));
         }
     
