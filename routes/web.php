@@ -11,6 +11,8 @@
 |
 */
 
+// Redirect based on current logged in status
+// No need to see the login form if you are already logged in!
 Route::get('/', function () {
 	if (Auth::check()) {
     	return redirect()->route('dashboard');
@@ -20,8 +22,15 @@ Route::get('/', function () {
     
 });
 
+
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
+
+// Log out and redirect to login form
+Route::get('logout', function(){
+	Auth::logout();
+	return redirect()->route('login');
+})->name('logout');
 
 Route::post('dashboard', 'NoteController@store')->name('storeNote');
 

@@ -178,6 +178,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Skydiver\LaravelMaterializeCSS\MaterializeCSSServiceProvider::class,
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+
 
     ],
 
@@ -229,6 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'MaterializeCSS' => Skydiver\LaravelMaterializeCSS\MaterializeCSS::class,
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
 
     ],
 

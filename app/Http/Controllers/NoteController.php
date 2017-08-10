@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Note;
 use Auth;
+use Alert;
+use Carbon\Carbon;
 
 class NoteController extends Controller
 {
