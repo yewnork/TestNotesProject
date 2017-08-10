@@ -18,7 +18,7 @@
 			<form method="POST" action="{{ route('updateNote', ['id' => $note->id]) }}">
             {{ csrf_field() }}
             <div class="input-field col s12 m8">
-                <textarea name="content" id="add-note" class="materialize-textarea" autofocus>{!! nl2br(e($note->content)) !!}</textarea>
+                <textarea name="content" id="add-note" class="materialize-textarea" autofocus>{!!$note->content!!}</textarea>
                 <label for="content">Edit Note Content</label>
             </div>
             <div class="input-field col s12 m4">
