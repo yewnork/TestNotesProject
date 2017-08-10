@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Note;
-use Alert;
-use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -27,6 +24,6 @@ class HomeController extends Controller
     public function index()
     {
         $notes = Note::orderBy('created_at', 'desc')->get();
-        return view('dashboard/home',compact('notes'));
+        return view('dashboard/home', compact('notes'));
     }
 }

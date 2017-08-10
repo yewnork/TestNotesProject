@@ -13,13 +13,23 @@
     {!! MaterializeCSS::include_full() !!}
     <script src="js/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     @include('sweet::alert')
+
+    
+    <script>
+        $( document ).ready(function(){
+            $(".button-collapse").sideNav();
+        });
+    </script>
 
 </head>
 <body>
     <div id="dashboard">
+        <div class="container">
+        @yield('headerlinks')
         @yield('content')
+        </div>
     </div>
 
 </body>

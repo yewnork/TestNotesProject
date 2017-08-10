@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Note;
 use Auth;
-use Alert;
-use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class NoteController extends Controller
 {
@@ -42,7 +39,7 @@ class NoteController extends Controller
         $this->validate($request, [
             'content' => 'required',
         ]);
-        $note = new Note();
+        $note          = new Note();
         $note->content = $request->content;
         $note->user_id = Auth::id();
         $note->save();
