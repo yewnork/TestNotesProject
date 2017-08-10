@@ -38,14 +38,24 @@
             <div class="nav-wrapper">
                 <a href="#!" class="brand-logo">Test Notes App</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="{{route('dashboard')}}">Dashboard</a></li>
-                    <li><a href="{{route('logout')}}">Logout</a></li>
-                </ul>
-                <ul class="side-nav" id="mobile-demo">
-                    <li><a href="{{route('dashboard')}}">Dashboard</a></li>
-                    <li><a href="{{route('logout')}}">Logout</a></li>
-                </ul>
+                @if (Auth::check())
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="{{route('dashboard')}}">Dashboard</a></li>
+                        <li><a href="{{route('logout')}}">Logout</a></li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="{{route('dashboard')}}">Dashboard</a></li>
+                        <li><a href="{{route('logout')}}">Logout</a></li>
+                    </ul>
+                @else
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="{{route('login')}}">Login</a></li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="{{route('login')}}">Login</a></li>
+                    </ul>
+                @endif
+                
             </div>
         </nav>
         @yield('content')
