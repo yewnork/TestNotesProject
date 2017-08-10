@@ -36,7 +36,7 @@
         <div class="container">
         <nav>
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Test Notes App</a>
+                <a href="/" class="brand-logo">Test Notes App</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 @if (Auth::check())
                     <ul class="right hide-on-med-and-down">
