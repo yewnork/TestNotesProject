@@ -11,23 +11,43 @@
     <title>Test Notes App</title>
 
     {!! MaterializeCSS::include_full() !!}
-    <script src="js/sweetalert.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+    <script src="{{ asset('js/sweetalert.min.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     @include('sweet::alert')
 
-    
+
     <script>
         $( document ).ready(function(){
             $(".button-collapse").sideNav();
         });
     </script>
 
+    <style type="text/css">
+        body{
+            /*font-size: 200%;*/
+        }
+
+    </style>
+
 </head>
 <body>
     <div id="dashboard">
         <div class="container">
-        @yield('headerlinks')
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">Test Notes App</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{route('dashboard')}}">Dashboard</a></li>
+                    <li><a href="{{route('logout')}}">Logout</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="{{route('dashboard')}}">Dashboard</a></li>
+                    <li><a href="{{route('logout')}}">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
         @yield('content')
         </div>
     </div>

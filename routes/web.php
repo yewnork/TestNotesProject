@@ -35,5 +35,12 @@ Route::get('logout', function () {
 
 /* Admin Dashboard Routes */
 
-Route::post('dashboard', 'NoteController@store')->name('storeNote')->middleware('auth');
 Route::get('dashboard', 'HomeController@index')->name('dashboard');
+
+Route::post('dashboard', 'NoteController@store')->name('storeNote')->middleware('auth');
+
+Route::any('dashboard/{id}/delete', 'NoteController@destroy')->name('deleteNote')->middleware('auth');
+
+Route::any('dashboard/{id}/edit', 'NoteController@edit')->name('editNote')->middleware('auth');
+
+Route::post('dashboard/{id}/edit', 'NoteController@update')->name('updateNote')->middleware('auth');

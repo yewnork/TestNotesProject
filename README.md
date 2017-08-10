@@ -21,7 +21,8 @@
 
 # Other Info:
 
-Generic DB info (USER/PW/DB_NAME) is in the .env file
+Generic DB info (USER/PW/DB_NAME) is in the .env file. 
+
 
 Username \\ Passwords
 

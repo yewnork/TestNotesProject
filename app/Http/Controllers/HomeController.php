@@ -24,6 +24,6 @@ class HomeController extends Controller
     public function index()
     {
         $notes = Note::orderBy('created_at', 'desc')->get();
-        return view('dashboard/home', compact('notes'));
+        return view('notes.list_notes', compact('notes'));
     }
 }

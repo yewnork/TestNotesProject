@@ -36,6 +36,23 @@
     <li class="collection-item">
         <span class="title"><b>{{ $note->user->name }}</b></span> - <span><i>{{ $note->created_at->diffForHumans() }}</i></span>
         <p>{!! nl2br(e($note->content)) !!}</p>
+        <div class="row">
+            <form method="POST" action="{{ route('deleteNote',['id'=> $note->id]) }}">
+                {{ csrf_field() }}
+                <div class="input-field col s6">
+                    <button type="submit" class="red btn">
+                        <i class="material-icons">delete_forever</i>
+                    </button>
+                </div>
+            </form>
+            <div class="input-field col s6">
+                <a href="{{ route('editNote',['id'=> $note->id]) }}">
+                    <button type="submit" class="orange btn">
+                    <i class="material-icons">edit</i>
+                    </button>
+                </a>
+            </div>
+        </div>
     </li>
     @endforeach
 </ul>
